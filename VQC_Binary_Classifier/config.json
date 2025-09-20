@@ -1,0 +1,41 @@
+{
+  "experiment": {
+    "name": "VQC_Binary_Classification",
+    "version": "1.0.0",
+    "description": "Professional Quantum ML Pipeline for Binary Classification"
+  },
+  "quantum_settings": {
+    "max_iterations": 100,
+    "shots": 1024,
+    "random_seed": 42,
+    "feature_map": {
+      "type": "ZZFeatureMap",
+      "feature_dimension": 2,
+      "reps": 2,
+      "entanglement": "circular"
+    },
+    "ansatz": {
+      "type": "RealAmplitudes", 
+      "num_qubits": 2,
+      "reps": 3
+    },
+    "optimizer": {
+      "type": "COBYLA"
+    }
+  },
+  "data_settings": {
+    "dataset": "iris",
+    "binary_classes": ["setosa", "versicolor"],
+    "features": ["sepal_length", "sepal_width"],
+    "test_size": 0.3,
+    "scaling": "StandardScaler"
+  },
+  "output_settings": {
+    "save_results": true,
+    "save_plots": true,
+    "results_dir": "results",
+    "logs_dir": "logs",
+    "plot_format": "png",
+    "plot_dpi": 300
+  }
+}
